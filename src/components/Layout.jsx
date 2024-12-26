@@ -4,7 +4,7 @@ function Layout({ children }) {
   return (
     <div className="bg-gradient-to-br from-background to-muted min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto">
         {children}
       </main>
       <footer className="border-t backdrop-blur py-6 supports-[backdrop-filter]:bg-background/60">

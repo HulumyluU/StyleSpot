@@ -1,11 +1,14 @@
+import { Link } from "react-router";
+import WelcomeSection from "../components/WelcomeSection";
+import NewArrivals from "../components/NewArrivals";
+
 function Home() {
    return (
-     <div className="space-y-6">
-       <h1 className="text-4xl font-bold">Welcome to StyleSpot</h1>
-       <p className="text-lg text-gray-600">
-         Discover the latest trends and styles for your wardrobe.
-       </p>
+     <div className="max-w-full">
+       <WelcomeSection />
+       <NewArrivals />
      </div>
+
    );
  }
  
