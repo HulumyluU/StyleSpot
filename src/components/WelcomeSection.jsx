@@ -3,7 +3,7 @@ import ImageLoader from "./ImageLoader";
 
 function WelcomeSection() {
   return (
-    <div className="relative w-full h-[calc(100vh-64px)]">
+    <div className="relative w-full  h-[calc(100vh-64px)]">
       <ImageLoader
         src="../../bg_img1.jpg"
         alt="bg img"

@@ -7,20 +7,27 @@ import './App.css';
 import Cart from './pages/Cart';
 import Blog from './pages/Blog';
 import Shop from './pages/Shop';
+import { CartProvider } from './context/CartContext';
+import ProductDetail from './pages/ProductDetail';
+import { Toaster } from 'react-hot-toast';
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/shop" element={<Shop />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <CartProvider>
+      <Router>
+         <Layout>
+            <Toaster position="top-right" />
+            <Routes>
+               <Route path="/" element={<Home />} />
+               <Route path="/about" element={<About />} />
+               <Route path="/contact" element={<Contact />} />
+               <Route path="/cart" element={<Cart />} />
+               <Route path="/blog" element={<Blog />} />
+               <Route path="/shop" element={<Shop />} />
+               <Route path="/product/:id" element={<ProductDetail />} />
+            </Routes>
+         </Layout>
+      </Router>
+    </CartProvider>
   );
 }
 
