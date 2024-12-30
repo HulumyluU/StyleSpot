@@ -1,9 +1,51 @@
 // src/pages/Cart.jsx
 import { useCart } from '../context/CartContext';
 import { Trash2 } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
+
+  const handleRemoveItem = (item) => {
+    removeFromCart(item.id);
+    toast.success(
+      <div className="flex items-center gap-2">
+        <span>Removed</span>
+        <span className="font-medium">{item.name}</span>
+        <span>from cart</span>
+      </div>,
+      {
+        duration: 2000,
+        style: {
+          background: '#F3F4F6',
+          color: '#1F2937',
+        },
+      }
+    );
+  };
+
+  const handleUpdateQuantity = (item, newQuantity) => {
+    if (newQuantity === 0) {
+      handleRemoveItem(item);
+      return;
+    }
+    
+    updateQuantity(item.id, newQuantity);
+    toast.success(
+      <div className="flex items-center gap-2">
+        <span>Updated</span>
+        <span className="font-medium">{item.name}</span>
+        <span>quantity to {newQuantity}</span>
+      </div>,
+      {
+        duration: 2000,
+        style: {
+          background: '#F3F4F6',
+          color: '#1F2937',
+        },
+      }
+    );
+  };
 
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -41,12 +83,12 @@ function Cart() {
                 
                 <div className="flex items-center gap-4 mt-4">
                   <div className="flex items-center border rounded-md">
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="px-3 py-1 border-r hover:bg-gray-100"
-                    >
-                      -
-                    </button>
+                  <button
+                     onClick={() => handleUpdateQuantity(item, item.quantity - 1)}
+                     className="px-3 py-1 border-r hover:bg-gray-100"
+                  >
+                     -
+                  </button>
                     <span className="px-4 py-1">{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
@@ -57,10 +99,10 @@ function Cart() {
                   </div>
                   
                   <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-red-600 hover:text-red-800"
+                     onClick={() => handleRemoveItem(item)}
+                     className="text-red-600 hover:text-red-800"
                   >
-                    <Trash2 size={20} />
+                     <Trash2 size={20} />
                   </button>
                 </div>
                 
