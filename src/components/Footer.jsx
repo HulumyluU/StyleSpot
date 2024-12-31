@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Contact Info */}
           <div>
-            <a href="#"><img src="/logo.png" alt="StyleSpot" className="h-12 mb-4" /></a>
+            <a href="#"><img src="../public/img/logo.png" alt="StyleSpot" className="w-14" /></a>
             <h4 className="font-bold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-600">
               <p><span className="font-semibold">Address:</span> 213 Welling Road, st 34</p>
