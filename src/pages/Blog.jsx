@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ImageLoader from '../components/ImageLoader';
 
 function Blog() {
   const sections = [
@@ -40,7 +41,7 @@ function Blog() {
   return (
     <div className="w-full">
       <div className="relative w-full h-[400px] mb-8">
-        <img 
+        <ImageLoader 
           src="/blog1.webp" 
           alt="Blog Header" 
           className="w-full h-full object-cover"
@@ -54,7 +55,7 @@ function Blog() {
         {sections.map((section, index) => (
           <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 mb-16`}>
             <div className="w-full md:w-1/2">
-              <img src={section.img} alt={section.title} className="w-full h-[400px] object-cover rounded-lg"/>
+              <ImageLoader src={section.img} alt={section.title} className="w-full h-[400px] object-cover rounded-lg"/>
             </div>
             <div className="w-full md:w-1/2 space-y-4">
               <h2 className="text-3xl font-bold">{section.title}</h2>

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import toast from 'react-hot-toast';
+import ImageLoader from './ImageLoader';
 
 function Product({ tshirt }) {  
 
@@ -36,7 +37,7 @@ function Product({ tshirt }) {
      >
        {/* Image Container */}
        <div className="aspect-w-4 aspect-h-3 bg-gray-200 overflow-hidden">
-         <img
+         <ImageLoader
            src={`https://apishirts-production.up.railway.app/images/product${tshirt.id}.jpg`}
            alt={tshirt.name}
            className="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-105"

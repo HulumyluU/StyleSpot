@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ImageLoader from './ImageLoader';
 
 const ExploreMore = () => {
   return (
@@ -9,7 +10,7 @@ const ExploreMore = () => {
         {/* First Promotional Block */}
         <div className="relative w-full md:w-1/2">
           <div className="relative h-[600px]">
-            <img 
+            <ImageLoader 
               src="../public/explore_1.jpg" 
               alt="Crazy deals promotion" 
               className="w-full h-full object-cover"
@@ -32,7 +33,7 @@ const ExploreMore = () => {
         {/* Second Promotional Block */}
         <div className="relative w-full md:w-1/2">
           <div className="relative h-[600px]">
-            <img 
+            <ImageLoader 
               src="../public/explore_3.jpg" 
               alt="Spring/Summer collection" 
               className="w-full h-full object-cover"

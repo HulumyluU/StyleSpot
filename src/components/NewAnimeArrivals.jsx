@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "../components/Product";
+import ImageLoader from "./ImageLoader";
 
 function NewAnimeArrivals() {
   const [tshirts, setTshirts] = useState([]);
@@ -20,7 +21,7 @@ function NewAnimeArrivals() {
     <div className="w-full">
       {/* Section Header */}
       <div className="relative  w-full h-[33vh] overflow-hidden mb-10">
-        <img
+        <ImageLoader
           className="w-full h-full object-cover"
           src="../public/img1.jpg"
           alt="Anime Style T-shirts"

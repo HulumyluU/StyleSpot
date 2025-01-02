@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
+import ImageLoader from './ImageLoader';
 
 const Footer = () => {
   return (
@@ -80,12 +81,12 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Install app</h4>
             <p className="text-gray-600 mb-4">From app store or Google play</p>
             <div className="flex flex-col gap-3">
-               <img 
+               <ImageLoader 
                   src="../public/img/app.jpg"
                   alt="App Store"
                   className="w-32 h-10 object-contain cursor-pointer"
                />
-               <img 
+               <ImageLoader 
                   src="../public/img/play.jpg"
                   alt="Google Play"
                   className="w-32 h-10 object-contain cursor-pointer"
@@ -93,7 +94,7 @@ const Footer = () => {
             </div>
             <p className="mt-6 mb-3 text-gray-600">Secured Payment Gateways</p>
                <div className="flex gap-2 items-center">
-                  <img 
+                  <ImageLoader 
                      src="../public/img/pay.png"
                      alt="Payment Methods"
                      className="h-8 object-contain"

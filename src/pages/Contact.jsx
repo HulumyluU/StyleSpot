@@ -1,12 +1,13 @@
 import React from 'react';
 import { Mail, Phone, Clock, MapPin } from 'lucide-react';
+import ImageLoader from '../components/ImageLoader';
 
 const Contact = () => {
   return (
     <div>
       {/* Hero Section with Image */}
       <div className="relative h-[400px] w-full mb-12">
-        <img
+        <ImageLoader
           src="../public/contact.jpg"
           alt="Contact hero"
           className="w-full h-full object-cover"

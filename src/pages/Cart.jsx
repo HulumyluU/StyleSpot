@@ -2,6 +2,7 @@
 import { useCart } from '../context/CartContext';
 import { Trash2 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import ImageLoader from '../components/ImageLoader';
 
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
@@ -71,7 +72,7 @@ function Cart() {
         <div className="lg:col-span-2">
           {cartItems.map((item) => (
             <div key={item.id} className="flex flex-col md:flex-row items-start gap-4 border-b border-gray-200 py-6">
-              <img
+              <ImageLoader
                 src={`https://apishirts-production.up.railway.app/images/product${item.id}.jpg`}
                 alt={item.name}
                 className="w-full md:w-48 h-48 object-cover rounded-lg"
