@@ -98,7 +98,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full md:w-auto px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+                className="px-6 py-2 bg-red-800 text-white rounded hover:bg-red-900 transition-colors"
               >
                 Submit
               </button>
@@ -106,26 +106,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="mt-16 bg-red-900 text-white p-8 rounded-lg">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h2 className="text-2xl font-semibold">Sign Up For Newsletters</h2>
-            <p>Get E-mail updates about our latest shop and special offers</p>
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 max-w-md p-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
-              />
-              <button
-                type="button"
-                className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
-              >
-                Sign up
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
