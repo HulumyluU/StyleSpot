@@ -1,8 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, Clock, MapPin } from 'lucide-react';
 import ImageLoader from '../components/ImageLoader';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '01db6249-cc48-4d59-bf47-1de3fa5cb5f4',
+          ...formData
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setStatus('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setStatus('Error sending message. Please try again.');
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   return (
     <div>
       {/* Hero Section with Image */}
@@ -67,33 +118,49 @@ const Contact = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold">Leave a message</h2>
             <p className="text-gray-600">We love to hear from you</p>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your name"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  required
                 />
               </div>
               <div>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="E-mail"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  required
                 />
               </div>
               <div>
                 <input
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Subject"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  required
                 />
               </div>
               <div>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Your message"
                   rows={6}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  required
                 />
               </div>
               <button
@@ -102,10 +169,16 @@ const Contact = () => {
               >
                 Submit
               </button>
+              {status && (
+                <div className={`mt-4 text-center ${
+                  status.includes('successfully') ? 'text-green-600' : 'text-red-600'
+                }`}>
+                  {status}
+                </div>
+              )}
             </form>
           </div>
         </div>
-
       </div>
     </div>
   );
