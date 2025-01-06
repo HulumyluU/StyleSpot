@@ -57,9 +57,9 @@ function Product({ tshirt }) {
              ${tshirt.price}
            </span>
            <button className="
-           bg-red-800 text-white px-6 py-2 rounded-md transition-colors
-           duration-300 hover:bg-red-900 focus:outline-none focus:ring-2
-           focus:ring-red-500 focus:ring-offset-2"  onClick={handleAddToCart}>
+               bg-red-800 text-white px-6 py-2 rounded-md transition-colors
+               duration-300 hover:bg-red-900 focus:outline-none focus:ring-2
+               focus:ring-red-500 focus:ring-offset-2"  onClick={handleAddToCart}>
              Add to Cart
            </button>
          </div>

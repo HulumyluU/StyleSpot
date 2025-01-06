@@ -52,7 +52,7 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
           <ImageLoader 
-            src="../public/about_m1.jpg" 
+            src="../about_m1.jpg" 
             alt="Style inspiration" 
             className="w-full h-[400px] object-cover"
           />
@@ -64,7 +64,7 @@ const About = () => {
 
         <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
           <ImageLoader 
-            src="../public/about_m2.jpg" 
+            src="../about_m2.jpg" 
             alt="Fashion showcase" 
             className="w-full h-[400px] object-cover"
           />
@@ -76,7 +76,7 @@ const About = () => {
 
         <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
           <ImageLoader 
-            src="../public/about_m3.jpg" 
+            src="../about_m3.jpg" 
             alt="Style collection" 
             className="w-full h-[400px] object-cover"
           />
@@ -88,7 +88,7 @@ const About = () => {
 
         <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
           <ImageLoader 
-            src="../public/about4.jpg" 
+            src="../about4.jpg" 
             alt="Fashion inspiration" 
             className="w-full h-[400px] object-cover"
           />
@@ -141,7 +141,7 @@ const About = () => {
           </div>
           <div className="md:w-1/2 order-1 md:order-2">
             <ImageLoader 
-              src="../public/about5.jpg" 
+              src="../about5.jpg" 
               alt="Contemporary fashion showcase" 
               className="rounded-lg shadow-lg w-full h-[600px] object-cover"
             />
@@ -152,7 +152,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <ImageLoader 
-              src="../public/about6.jpg" 
+              src="../about6.jpg" 
               alt="Urban street style" 
               className="rounded-lg shadow-lg w-full h-[600px] object-cover"
             />
@@ -182,7 +182,7 @@ const About = () => {
           </div>
           <div className="md:w-1/2 order-1 md:order-2">
             <ImageLoader 
-              src="../public/about7.jpg" 
+              src="../about7.jpg" 
               alt="Artistic fashion expression" 
               className="rounded-lg shadow-lg w-full h-[600px] object-cover"
             />
