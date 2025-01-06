@@ -54,10 +54,10 @@ const Header = () => {
                 className="block hover:opacity-80 transition-opacity duration-300"
               >
                 <img
-                  src={ location.pathname !== "/cart" ? "../bx-cart.png" : "../bx-cart_red.png" }
+                  src={location.pathname !== "/cart" ? "/bx-cart.png" : "/bx-cart_red.png"}
                   alt="Shopping Cart"
                   className="w-6 h-6"
-                />
+                  />
               </Link>
             </li>
           </ul>
