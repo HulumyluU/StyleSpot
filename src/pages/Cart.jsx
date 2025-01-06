@@ -1,11 +1,13 @@
-// src/pages/Cart.jsx
 import { useCart } from '../context/CartContext';
 import { Trash2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import ImageLoader from '../components/ImageLoader';
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
+   const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const TAX_RATE = 0.05;
 
   const handleRemoveItem = (item) => {
     removeFromCart(item.id);
@@ -48,8 +50,18 @@ function Cart() {
     );
   };
 
-  const calculateTotal = () => {
+  const calculateSubtotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  const calculateTax = (subtotal) => {
+    return subtotal * TAX_RATE;
+  };
+
+  const calculateTotal = () => {
+    const subtotal = calculateSubtotal();
+    const tax = calculateTax(subtotal);
+    return subtotal + tax;
   };
 
   if (cartItems.length === 0) {
@@ -84,15 +96,15 @@ function Cart() {
                 
                 <div className="flex items-center gap-4 mt-4">
                   <div className="flex items-center border rounded-md">
-                  <button
-                     onClick={() => handleUpdateQuantity(item, item.quantity - 1)}
-                     className="px-3 py-1 border-r hover:bg-gray-100"
-                  >
-                     -
-                  </button>
+                    <button
+                      onClick={() => handleUpdateQuantity(item, item.quantity - 1)}
+                      className="px-3 py-1 border-r hover:bg-gray-100"
+                    >
+                      -
+                    </button>
                     <span className="px-4 py-1">{item.quantity}</span>
                     <button
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      onClick={() => handleUpdateQuantity(item, item.quantity + 1)}
                       className="px-3 py-1 border-l hover:bg-gray-100"
                     >
                       +
@@ -100,10 +112,10 @@ function Cart() {
                   </div>
                   
                   <button
-                     onClick={() => handleRemoveItem(item)}
-                     className="text-red-600 hover:text-red-800"
+                    onClick={() => handleRemoveItem(item)}
+                    className="text-red-600 hover:text-red-800"
                   >
-                     <Trash2 size={20} />
+                    <Trash2 size={20} />
                   </button>
                 </div>
                 
@@ -117,26 +129,43 @@ function Cart() {
           <div className="bg-gray-50 rounded-lg p-6 sticky top-6">
             <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
             
+            {/* Individual items summary */}
             <div className="space-y-2 mb-4">
+              {cartItems.map((item) => (
+                <div key={item.id} className="flex justify-between text-sm">
+                  <span>{item.name} (x{item.quantity})</span>
+                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="border-t border-gray-200 pt-4 space-y-2">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>${calculateTotal().toFixed(2)}</span>
+                <span>${calculateSubtotal().toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Tax (5%)</span>
+                <span>${calculateTax(calculateSubtotal()).toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
-                <span>Free</span>
+                <span className="text-green-600">Free</span>
               </div>
             </div>
             
-            <div className="border-t border-gray-200 pt-4 mb-6">
+            <div className="border-t border-gray-200 mt-4 pt-4 mb-6">
               <div className="flex justify-between font-bold text-lg">
                 <span>Total</span>
                 <span>${calculateTotal().toFixed(2)}</span>
               </div>
             </div>
             
-            <button className="w-full bg-red-800 text-white py-3 rounded-md hover:bg-red-900 transition-colors">
-              Proceed to Checkout
+            <button 
+               onClick={() => navigate('/pay')}
+               className="w-full bg-red-800 text-white py-3 rounded-md hover:bg-red-900 transition-colors"
+               >
+               Proceed to Checkout
             </button>
           </div>
         </div>

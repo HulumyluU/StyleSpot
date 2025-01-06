@@ -10,6 +10,7 @@ import Shop from './pages/Shop';
 import { CartProvider } from './context/CartContext';
 import ProductDetail from './pages/ProductDetail';
 import { Toaster } from 'react-hot-toast';
+import Pay from './pages/Pay';
 function App() {
   return (
     <CartProvider>
@@ -24,6 +25,7 @@ function App() {
                <Route path="/blog" element={<Blog />} />
                <Route path="/shop" element={<Shop />} />
                <Route path="/product/:id" element={<ProductDetail />} />
+               <Route path='/pay' element={<Pay />} />
             </Routes>
          </Layout>
       </Router>

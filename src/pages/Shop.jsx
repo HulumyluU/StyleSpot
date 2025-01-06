@@ -19,7 +19,7 @@ function Shop(){
      <div className="w-full max-w-7xl mx-auto px-4 py-12">
        {/* Section Header */}
        <div className="mb-10 text-center">
-         <h2 className="text-3xl font-bold mb-2">Show with <span className="text-[#590000]">StyleSpot</span></h2>
+         <h2 className="text-3xl font-bold mb-2">Shop with <span className="text-[#590000]">StyleSpot</span></h2>
          <div className="w-24 h-1 bg-red-800 mx-auto"></div>
        </div>
  
