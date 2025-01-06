@@ -11,7 +11,7 @@ const ExploreMore = () => {
         <div className="relative w-full md:w-1/2">
           <div className="relative h-[600px]">
             <ImageLoader 
-              src="../public/explore_1.jpg" 
+              src="../../explore_1.jpg" 
               alt="Crazy deals promotion" 
               className="w-full h-full object-cover"
             />
@@ -34,7 +34,7 @@ const ExploreMore = () => {
         <div className="relative w-full md:w-1/2">
           <div className="relative h-[600px]">
             <ImageLoader 
-              src="../public/explore_3.jpg" 
+              src="../../explore_3.jpg" 
               alt="Spring/Summer collection" 
               className="w-full h-full object-cover"
             />

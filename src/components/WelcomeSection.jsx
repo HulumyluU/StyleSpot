@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ImageLoader from "./ImageLoader";
 
+
 function WelcomeSection() {
   return (
    <div className="relative w-full h-[calc(100vh-64px)]">
@@ -27,3 +28,4 @@ function WelcomeSection() {
 }
 
 export default WelcomeSection;
+
