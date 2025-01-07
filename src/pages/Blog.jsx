@@ -4,25 +4,25 @@ import ImageLoader from '../components/ImageLoader';
 function Blog() {
   const sections = [
     {
-      img: "/about1.jpg",
+      img: "/img/about1.jpg",
       title: "Contemporary Elegance",
       text: "Our collection embodies the perfect balance of modern sophistication and timeless style. We believe in creating looks that transcend seasonal trends while maintaining a sharp, contemporary edge. Each piece is carefully selected to ensure versatility and lasting appeal in your wardrobe.",
       expandedText: "We source materials from the finest suppliers worldwide, ensuring each garment meets our exacting standards. Our design team draws inspiration from global fashion capitals while adding unique touches that set our pieces apart. The result is a collection that feels both luxurious and wearable, perfect for the modern fashion enthusiast who appreciates quality and style."
     },
     {
-      img: "/about2.jpg",
+      img: "/img/about2.jpg",
       title: "Street Style Evolution",
       text: "Urban fashion continues to evolve, blending comfort with cutting-edge design. Our street style collection represents the pulse of contemporary fashion, where authenticity meets innovation.",
       expandedText: "From Tokyo to New York, we study street fashion trends and urban culture to create pieces that resonate with the modern consumer. Our street style collection incorporates elements of skateboarding, hip-hop, and urban art, resulting in unique pieces that tell a story while maintaining functionality and comfort."
     },
     {
-      img: "/about3.jpg",
+      img: "/img/about3.jpg",
       title: "Sustainable Fashion",
       text: "Sustainability isn't just a trend—it's a commitment. Our eco-conscious collection showcases how style and environmental responsibility can coexist.",
       expandedText: "We use recycled materials, organic cotton, and eco-friendly dyes in our production process. Our packaging is 100% recyclable, and we partner with local environmental initiatives to offset our carbon footprint. Every purchase contributes to our tree-planting program, making fashion a force for positive change."
     },
     {
-      img: "/about4.jpg",
+      img: "/img/about4.jpg",
       title: "Seasonal Trends",
       text: "Stay ahead of the curve with our seasonal collections. We analyze global fashion trends and adapt them to create wearable, stylish pieces that resonate with our customers.",
       expandedText: "Our team of fashion forecasters works year-round to predict and adapt upcoming trends. We collaborate with influencers and style experts to ensure our collections remain fresh and relevant. Each season brings new colors, patterns, and silhouettes that complement our core pieces."
