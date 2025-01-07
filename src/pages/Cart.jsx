@@ -69,9 +69,12 @@ function Cart() {
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-4">
         <h2 className="text-2xl font-semibold mb-4">Your cart is empty</h2>
         <p className="text-gray-600 mb-8">Add some awesome products to your cart!</p>
-        <a href="/shop" className="bg-red-800 text-white px-6 py-3 rounded-md hover:bg-red-900">
-          Continue Shopping
-        </a>
+        <button 
+               onClick={() => navigate('/shop')}
+               className="bg-red-800 text-white px-6 py-3 rounded-md hover:bg-red-900"
+               >
+               Shop now
+         </button>
       </div>
     );
   }
