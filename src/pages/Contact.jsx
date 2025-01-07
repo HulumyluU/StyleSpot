@@ -59,7 +59,7 @@ const Contact = () => {
       {/* Hero Section with Image */}
       <div className="relative h-[400px] w-full mb-12">
         <ImageLoader
-          src="../public/contact.jpg"
+          src="/img/contact.jpg"
           alt="Contact hero"
           className="w-full h-full object-cover"
         />

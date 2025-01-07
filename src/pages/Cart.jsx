@@ -82,47 +82,50 @@ function Cart() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          {cartItems.map((item) => (
+        {cartItems.map((item) => (
             <div key={item.id} className="flex flex-col md:flex-row items-start gap-4 border-b border-gray-200 py-6">
-              <ImageLoader
-                src={`https://apishirts-production.up.railway.app/images/product${item.id}.jpg`}
-                alt={item.name}
-                className="w-full md:w-48 h-48 object-cover rounded-lg"
-              />
-              
-              <div className="flex-grow">
-                <h3 className="text-xl font-semibold">{item.name}</h3>
-                <p className="text-gray-600 mt-2">{item.description}</p>
-                
-                <div className="flex items-center gap-4 mt-4">
+               {/* Modified image container */}
+               <div className="w-full md:w-48 min-h-[200px] md:min-h-[192px]">
+                  <ImageLoader
+                  src={`https://apishirts-production.up.railway.app/images/product${item.id}.jpg`}
+                  alt={item.name}
+                  className="w-full h-full object-contain rounded-lg"
+                  />
+               </div>
+               
+               <div className="flex-grow w-full">
+                  <h3 className="text-xl font-semibold">{item.name}</h3>
+                  <p className="text-gray-600 mt-2">{item.description}</p>
+                  
+                  <div className="flex items-center gap-4 mt-4">
                   <div className="flex items-center border rounded-md">
-                    <button
-                      onClick={() => handleUpdateQuantity(item, item.quantity - 1)}
-                      className="px-3 py-1 border-r hover:bg-gray-100"
-                    >
-                      -
-                    </button>
-                    <span className="px-4 py-1">{item.quantity}</span>
-                    <button
-                      onClick={() => handleUpdateQuantity(item, item.quantity + 1)}
-                      className="px-3 py-1 border-l hover:bg-gray-100"
-                    >
-                      +
-                    </button>
+                     <button
+                        onClick={() => handleUpdateQuantity(item, item.quantity - 1)}
+                        className="px-3 py-1 border-r hover:bg-gray-100"
+                     >
+                        -
+                     </button>
+                     <span className="px-4 py-1">{item.quantity}</span>
+                     <button
+                        onClick={() => handleUpdateQuantity(item, item.quantity + 1)}
+                        className="px-3 py-1 border-l hover:bg-gray-100"
+                     >
+                        +
+                     </button>
                   </div>
                   
                   <button
-                    onClick={() => handleRemoveItem(item)}
-                    className="text-red-600 hover:text-red-800"
+                     onClick={() => handleRemoveItem(item)}
+                     className="text-red-600 hover:text-red-800"
                   >
-                    <Trash2 size={20} />
+                     <Trash2 size={20} />
                   </button>
-                </div>
-                
-                <p className="text-lg font-bold mt-4">${(item.price * item.quantity).toFixed(2)}</p>
-              </div>
+                  </div>
+                  
+                  <p className="text-lg font-bold mt-4">${(item.price * item.quantity).toFixed(2)}</p>
+               </div>
             </div>
-          ))}
+            ))}
         </div>
 
         <div className="lg:col-span-1">

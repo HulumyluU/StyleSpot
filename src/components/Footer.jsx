@@ -132,12 +132,12 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Install app</h4>
             <div className="flex flex-col gap-3">
               <ImageLoader 
-                src="../public/img/app.jpg"
+                src="/img/app.jpg"
                 alt="App Store"
                 className="w-32 h-10 object-contain cursor-pointer"
               />
               <ImageLoader 
-                src="../public/img/play.jpg"
+                src="/img/play.jpg"
                 alt="Google Play"
                 className="w-32 h-10 object-contain cursor-pointer"
               />
@@ -145,7 +145,7 @@ const Footer = () => {
             <p className="mt-6 mb-3 text-gray-600">Secured Payment Gateways</p>
             <div className="flex gap-2 items-center">
               <ImageLoader 
-                src="../public/img/pay.png"
+                src="/img/pay.png"
                 alt="Payment Methods"
                 className="h-8 object-contain"
               />

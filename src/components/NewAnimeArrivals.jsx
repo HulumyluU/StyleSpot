@@ -3,6 +3,7 @@ import axios from "axios";
 import Product from "../components/Product";
 import ImageLoader from "./ImageLoader";
 
+
 function NewAnimeArrivals() {
   const [tshirts, setTshirts] = useState([]);
 
@@ -23,7 +24,7 @@ function NewAnimeArrivals() {
       <div className="relative  w-full h-[33vh] overflow-hidden mb-10">
         <ImageLoader
           className="w-full h-full object-cover"
-          src="../../img1.jpg"
+          src="/img/img1.jpg"
           alt="Anime Style T-shirts"
         />
         <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-4xl bg-black bg-opacity-50">

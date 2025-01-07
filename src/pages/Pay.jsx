@@ -45,7 +45,7 @@ function Pay() {
                   placeholder="1234 1234 1234 1234"
                 />
                 <div className="absolute right-2 top-2">
-                  <ImageLoader src="../public/img/pay.png" alt="Payment methods" className="h-6" />
+                  <ImageLoader src="/img/pay.png" alt="Payment methods" className="h-6" />
                 </div>
               </div>
 

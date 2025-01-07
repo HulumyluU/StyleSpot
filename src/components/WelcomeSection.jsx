@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import ImageLoader from "./ImageLoader";
+import React from 'react';
 
 
 function WelcomeSection() {
   return (
    <div className="relative w-full h-[calc(100vh-64px)]">
    <ImageLoader
-     src="../../bg_img1.jpg"
+     src="/img/bg_img1.jpg"
      alt="bg img"
      className="absolute top-0 left-0 w-full h-full object-cover"
    />

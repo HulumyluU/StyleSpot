@@ -42,7 +42,7 @@ function Blog() {
     <div className="w-full">
       <div className="relative w-full h-[400px] mb-8">
         <ImageLoader 
-          src="/blog1.webp" 
+          src="/img/blog1.webp" 
           alt="Blog Header" 
           className="w-full h-full object-cover"
         />
